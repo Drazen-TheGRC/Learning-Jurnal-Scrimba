@@ -6,6 +6,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Header */
 header {
     display: flex;
     flex-direction: row;
@@ -14,14 +15,13 @@ header {
     box-sizing: border-box;
     width: 100%;
     background-color: whitesmoke;
-    
 }
 
 .logo-img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    padding: 10px;
+    padding: 1em;
     
 }
 .logo-text {
@@ -44,10 +44,28 @@ nav > ul {
 
 nav > ul > li {
     list-style-type: none;
-    padding-right: 20px;
+    padding-right: 1em;
     font-weight: 600;
     text-transform: uppercase;
 }
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+
+    box-sizing: border-box;
+    width: 100%;
+    
+    background-color: black;
+    color: white;
+}
+
+.copyright {
+    margin-top: 0.25em;
+}
+
 
 
 
@@ -55,35 +73,65 @@ nav > ul > li {
 
 
 .featured-post{
-    background-image: url("https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-image:   linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("../images/00 The Frontend Developer Career Path.jpg");
+
+    background-image:   linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url("https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
     background-size: cover;
     background-position: center;
 }
-.featured-post > article{
-    background-color: rgba(0, 0, 0, 0.6);
+
+
+
+
+
+/* Article */
+article{
 
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 1em;
 
-    padding-top: 20%;
+    padding-top: 5em;
     color: whitesmoke;
 }
 
-.featured-post > article h2, p {
+article h2, p {
     margin: 0;
-    margin-bottom: 10px;
+    padding: 0;
+    margin-bottom: 0.5em;
     
 }
 .date {
-
-    font-size: 0.75rem;
+    margin-top: 1em;
+    font-size: 1rem;
 }
 .heading {
 
     font-size: 2rem;
+    line-height: 0.9em;
 }
-.text {
+.intro-paragraph {
 
     font-size: 1rem;
 }
+
+
+
+
+
+
+/* Postes */
+
+.posts article{
+    padding-top: 2em;
+    color: black;
+}
+
+.post-img {
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
