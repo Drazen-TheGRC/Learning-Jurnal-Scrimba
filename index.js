@@ -38,7 +38,7 @@ function renderHomeFeaturedPost(){
     document.getElementById("featured-post").innerHTML = post_html
 }
 
-function renderFeaturedPost(){
+function renderPostFeaturedPost(){
 
     const featured_post = JSON.parse(localStorage.getItem("featured_post"))
 
@@ -135,5 +135,19 @@ function renderAllPostGrid(){
 
 
 
-renderHomeFeaturedPost()
-renderFewPostGrid()
+function getHtmlFilename(){
+    let url = window.location.pathname;
+    let file_name = url.substring(url.lastIndexOf('/')+1)
+    return file_name
+}
+
+
+
+if(getHtmlFilename() === "index.html"){
+    renderHomeFeaturedPost()
+    renderFewPostGrid()
+}
+else if(getHtmlFilename() === "post.html"){
+    renderFeaturedPost()
+    renderFewPostGrid()
+}
