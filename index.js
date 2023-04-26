@@ -8,14 +8,29 @@ document.addEventListener("click", function(e){
     // Store post into local storage
     else if(e.target.dataset.post_uuid)
     {
-        const featured_post = posts.filter(function(post){
-            return post.post_uuid === e.target.dataset.post_uuid
-        })[0]
-
-        localStorage.setItem("featured_post", JSON.stringify(featured_post))
+        openPost(e.target.dataset.post_uuid)
     }
 })
 
+
+
+
+
+
+
+
+
+
+function openPost(post_uuid){
+
+    const featured_post = posts.filter(function(post){
+        return post.post_uuid === post_uuid
+    })[0]
+
+    localStorage.setItem("featured_post", JSON.stringify(featured_post))
+
+    window.open("post.html", "_self")
+}
 
 
 function renderHomeFeaturedPost(){
@@ -28,7 +43,7 @@ function renderHomeFeaturedPost(){
     post_html = 
 
     `
-    <article>
+    <article class="article-home">
         <p class="date">${date}</p>
         <h2 class="heading" >${heading}</h2>
         <p class="intro-paragraph">${intro_paragraph}</p>
@@ -49,9 +64,18 @@ function renderPostFeaturedPost(){
 
     // Make html for post sections
 
+    let sectionHtml = ""
 
+    featured_post.sections.forEach(function(section){
+        sectionHtml += 
+        `
+            <h2 class="heading heading-section" >${section.heading}</h2>
+            <p class="intro-paragraph">${section.paragraph}</p>
+            <!--<img class="post-img" src="${section.paragraph_photo}">-->
+        `
+    })
 
-
+    console.log(sectionHtml)
 
 
 
@@ -60,18 +84,22 @@ function renderPostFeaturedPost(){
     post_html = 
 
     `
-    <article>
+    <article class="article-post">
         <p class="date">${date}</p>
         <h2 class="heading" >${heading}</h2>
         <p class="intro-paragraph">${intro_paragraph}</p>
         <img class="post-img" src="${post_photo}">
 
-        
+        ${sectionHtml}
+
+        <p id="recent-posts" class="recent-posts" >Recent posts</p>
 
     </article>
     `
 
-    document.getElementById("featured-post").innerHTML = post_html
+    
+
+    document.getElementById("featured-post-no-bg").innerHTML = post_html
 }
 
 function renderFewPostGrid(){
@@ -93,6 +121,7 @@ function renderFewPostGrid(){
             <p class="date">${date}</p>
             <h2 class="heading" data-post_uuid="${post.post_uuid}">${heading}</h2>
             <p class="intro-paragraph">${intro_paragraph}</p>
+            
         </article>
         `
         }
@@ -148,6 +177,6 @@ if(getHtmlFilename() === "index.html"){
     renderFewPostGrid()
 }
 else if(getHtmlFilename() === "post.html"){
-    renderFeaturedPost()
+    renderPostFeaturedPost()
     renderFewPostGrid()
 }
