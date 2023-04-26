@@ -119,10 +119,29 @@ article h2, p {
 
 
 
+.view-more {
+    display: block;
+    text-align: center;
 
+    color: black;
+    font-weight: 900;
+   
+    margin: 1em auto;
+    padding-bottom: 1em;
 
+    text-decoration: underline;
+    
+}
+a{
+
+    text-align: center;
+    
+    display: block;
+    
+    }
 
 /* Postes */
+
 
 .posts article{
     padding-top: 2em;
