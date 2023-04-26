@@ -5,11 +5,20 @@ document.addEventListener("click", function(e){
     if(e.target.id === "view-more"){
         renderAllPostGrid()
     }
+    // Store post into local storage
+    else if(e.target.dataset.post_uuid)
+    {
+        const featured_post = posts.filter(function(post){
+            return post.post_uuid === e.target.dataset.post_uuid
+        })[0]
+
+        localStorage.setItem("featured_post", JSON.stringify(featured_post))
+    }
 })
 
 
 
-function renderFeaturedPost(){
+function renderHomeFeaturedPost(){
     const date = posts[0].post_date
     const heading = posts[0].heading
     const intro_paragraph = posts[0].intro_paragraph
@@ -29,6 +38,41 @@ function renderFeaturedPost(){
     document.getElementById("featured-post").innerHTML = post_html
 }
 
+function renderFeaturedPost(){
+
+    const featured_post = JSON.parse(localStorage.getItem("featured_post"))
+
+    const date = featured_post.post_date
+    const heading = featured_post.heading
+    const intro_paragraph = featured_post.intro_paragraph
+    const post_photo = featured_post.post_photo
+
+    // Make html for post sections
+
+
+
+
+
+
+
+    let post_html = ""
+
+    post_html = 
+
+    `
+    <article>
+        <p class="date">${date}</p>
+        <h2 class="heading" >${heading}</h2>
+        <p class="intro-paragraph">${intro_paragraph}</p>
+        <img class="post-img" src="${post_photo}">
+
+        
+
+    </article>
+    `
+
+    document.getElementById("featured-post").innerHTML = post_html
+}
 
 function renderFewPostGrid(){
 
@@ -36,7 +80,7 @@ function renderFewPostGrid(){
     posts.forEach(function(post){
 
         if(post.post_uuid != "0" && parseInt(post.post_uuid) < 4){
-            const date = post.post_date
+        const date = post.post_date
         const heading = post.heading
         const intro_paragraph = post.intro_paragraph
         const post_photo = post.post_photo
@@ -45,9 +89,9 @@ function renderFewPostGrid(){
     
         `
         <article>
-            <img class="post-img" src="${post_photo}">
+            <img class="post-img" src="${post_photo}" data-post_uuid="${post.post_uuid}">
             <p class="date">${date}</p>
-            <h2 class="heading" >${heading}</h2>
+            <h2 class="heading" data-post_uuid="${post.post_uuid}">${heading}</h2>
             <p class="intro-paragraph">${intro_paragraph}</p>
         </article>
         `
@@ -68,7 +112,7 @@ function renderAllPostGrid(){
     posts.forEach(function(post){
 
         if(post.post_uuid != "0"){
-            const date = post.post_date
+        const date = post.post_date
         const heading = post.heading
         const intro_paragraph = post.intro_paragraph
         const post_photo = post.post_photo
@@ -77,9 +121,9 @@ function renderAllPostGrid(){
     
         `
         <article>
-            <img class="post-img" src="${post_photo}">
+            <img class="post-img" src="${post_photo}" data-post_uuid="${post.post_uuid}">
             <p class="date">${date}</p>
-            <h2 class="heading" >${heading}</h2>
+            <h2 class="heading" data-post_uuid="${post.post_uuid}">${heading}</h2>
             <p class="intro-paragraph">${intro_paragraph}</p>
         </article>
         `
@@ -91,5 +135,5 @@ function renderAllPostGrid(){
 
 
 
-renderFeaturedPost()
+renderHomeFeaturedPost()
 renderFewPostGrid()
