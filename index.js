@@ -183,3 +183,7 @@ else if(getHtmlFilename() === "post.html"){
     renderPostFeaturedPost()
     renderFewPostGrid()
 }
+else if(getHtmlFilename() === "about.html"){
+    
+    renderFewPostGrid()
+}
