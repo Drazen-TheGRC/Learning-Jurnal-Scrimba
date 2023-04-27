@@ -175,7 +175,7 @@ function getHtmlFilename(){
 
 
 
-if(getHtmlFilename() === "index.html"){
+if(getHtmlFilename() === "index.html" || getHtmlFilename() === ""){
     renderHomeFeaturedPost()
     renderFewPostGrid()
 }
