@@ -173,10 +173,10 @@ function getHtmlFilename(){
 
 
 if(getHtmlFilename() === "index.html"){
-    renderHomeFeaturedPost()
-    renderFewPostGrid()
+    //renderHomeFeaturedPost()
+    //renderFewPostGrid()
 }
 else if(getHtmlFilename() === "post.html"){
-    renderPostFeaturedPost()
-    renderFewPostGrid()
+    //renderPostFeaturedPost()
+    //renderFewPostGrid()
 }
