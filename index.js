@@ -69,7 +69,7 @@ function renderPostFeaturedPost(){
     featured_post.sections.forEach(function(section){
         sectionHtml += 
         `
-            <h2 class="heading heading-section" >${section.heading}</h2>
+            <h3 class="heading heading-section" >${section.heading}</h3>
             <p class="intro-paragraph">${section.paragraph}</p>
             <!--<img class="post-img" src="${section.paragraph_photo}">-->
         `
