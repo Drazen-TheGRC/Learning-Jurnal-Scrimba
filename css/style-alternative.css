@@ -7,7 +7,8 @@ body {
 }
 
 /* Header */
-header {
+header,
+.header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,42 +19,40 @@ header {
 }
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 3em;
     border-radius: 50%;
-    padding: 1em;
+    padding: 1.25em;
     
 }
+
 .logo-text {
     font-weight: 700;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 nav {
     margin-left: auto;
 }
+
 nav > ul {
     display: flex;
-    margin: 0;
-    padding: 0;
-
-    font-size: 0.85rem;
 }
 
 nav > ul > li {
     list-style-type: none;
-    padding-right: 1em;
+
+    padding-right: 1.25em;
+
     font-weight: 600;
     text-transform: uppercase;
 }
 
+/* Footer */
 footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    
 
     box-sizing: border-box;
     width: 100%;
@@ -62,17 +61,24 @@ footer{
     color: white;
 }
 
-.copyright {
-    margin-top: 0.25em;
+footer > p{
+    margin: 0;
+    padding: 0;
+
+    font-size: 1rem;
 }
 
+.footer-text{
+    margin-top: 1.25em;
+    font-weight: 700;
+}
 
+.copyright-text{
+    margin-top: 0.25em;
+    margin-bottom: 1.25em;
+}
 
-
-/* Featured post CSS */
-
-
-
+/* Featured Post*/
 
 .featured-post-no-bg,
 .featured-post{
@@ -82,45 +88,40 @@ footer{
 
 .featured-post{
     background-image:   linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url("../images/00 The Frontend Developer Career Path.jpg");
-
-    background-image:   linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url("https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-
 }
 
-
-
 /* Article */
-article{
 
+/* All articles */
+article{
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 1.25em;
 
     padding-top: 5em;
     color: whitesmoke;
-
-    /* border-bottom: 1px solid black; */
 }
 
+
+
+/*Articles in the posts excluding featuered post*/
 .article-post {
     color: black;
-    padding-top: 1em;
 }
 
 article h2, p {
     margin: 0;
-    padding: 0;
-    margin-bottom: 0.5em;
-    
+    padding: 0;    
 }
+
 .date {
-    margin-top: 1em;
+    margin-top: 1.5em;
     font-size: 1rem;
 }
-.heading {
 
+.heading {
+    margin: 0.5em 0;
     font-size: 2rem;
     line-height: 0.9em;
 }
@@ -130,9 +131,7 @@ article h2, p {
     margin: 1.5em 0;
 }
 
-
 .intro-paragraph {
-
     font-size: 1rem;
 }
 
@@ -148,25 +147,23 @@ article h2, p {
 
 .view-more {
     margin: 1em auto;
-    padding-bottom: 1em;
+    padding: 1em 0;
 
     text-decoration: underline;
-    
 }
+
 .recent-posts {
     margin-top: 2em;
     margin-bottom: -1em;
 }
 
-
 a{
     text-align: center;
     display: block;
-    }
+}
+
 
 /* Postes */
-
-
 .posts article{
     padding-top: 2em;
     color: black;

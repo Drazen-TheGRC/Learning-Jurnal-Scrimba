@@ -44,9 +44,11 @@ function renderHomeFeaturedPost(){
 
     `
     <article class="article-home">
-        <p class="date">${date}</p>
-        <h2 class="heading" >${heading}</h2>
-        <p class="intro-paragraph">${intro_paragraph}</p>
+        <div class="max-width">
+            <p class="date">${date}</p>
+            <h2 class="heading" >${heading}</h2>
+            <p class="intro-paragraph">${intro_paragraph}</p>
+        </div>
     </article>
     `
 
@@ -84,15 +86,16 @@ function renderPostFeaturedPost(){
     post_html = 
 
     `
-    <article class="article-post">
-        <p class="date">${date}</p>
-        <h2 class="heading" >${heading}</h2>
-        <p class="intro-paragraph">${intro_paragraph}</p>
-        <img class="post-img" src="${post_photo}">
+    <article class="article-post max-width">
 
-        ${sectionHtml}
+            <p class="date">${date}</p>
+            <h2 class="heading" >${heading}</h2>
+            <p class="intro-paragraph">${intro_paragraph}</p>
+            <img class="post-img" src="${post_photo}">
 
-        <p id="recent-posts" class="recent-posts" >Recent posts</p>
+            ${sectionHtml}
+
+            <p id="recent-posts" class="recent-posts" >Recent posts</p>
 
     </article>
     `
@@ -116,7 +119,7 @@ function renderFewPostGrid(){
         posts_html += 
     
         `
-        <article>
+        <article class="article-post">
             <img class="post-img" src="${post_photo}" data-post_uuid="${post.post_uuid}">
             <p class="date">${date}</p>
             <h2 class="heading" data-post_uuid="${post.post_uuid}">${heading}</h2>
@@ -173,10 +176,10 @@ function getHtmlFilename(){
 
 
 if(getHtmlFilename() === "index.html"){
-    //renderHomeFeaturedPost()
-    //renderFewPostGrid()
+    renderHomeFeaturedPost()
+    renderFewPostGrid()
 }
 else if(getHtmlFilename() === "post.html"){
-    //renderPostFeaturedPost()
-    //renderFewPostGrid()
+    renderPostFeaturedPost()
+    renderFewPostGrid()
 }
