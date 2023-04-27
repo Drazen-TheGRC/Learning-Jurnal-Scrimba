@@ -91,7 +91,7 @@ function renderPostFeaturedPost(){
             <p class="date">${date}</p>
             <h2 class="heading" >${heading}</h2>
             <p class="intro-paragraph">${intro_paragraph}</p>
-            <img class="post-img" src="${post_photo}">
+            <img class="post-img img-featured-post" src="${post_photo}">
 
             ${sectionHtml}
 

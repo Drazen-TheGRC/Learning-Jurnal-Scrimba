@@ -159,9 +159,12 @@ article h2, p {
     margin-bottom: -1em;
 }
 
-a{
-    text-align: center;
-    display: block;
+a,
+a:hover,
+a:active{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
 
 
@@ -174,7 +177,10 @@ a{
 .post-img {
     box-sizing: border-box;
     width: 100%;
+}
 
+.img-featured-post{
+    margin-top: 1em;
 }
 
 
@@ -222,8 +228,9 @@ a{
       }
 
       .header-container,
-      .posts{
-        max-width: 1080px;
+      .posts,
+      .max-width{
+        max-width: 960px;
         margin: 0 auto;
       }
 
